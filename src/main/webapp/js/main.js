@@ -2,7 +2,7 @@
 	angular.portlet.add("poc-angular-portlet", "poc-angular-portlet",
 		function() {
 			var myModule = angular.module("myModule", []);
-			myModule.controller("MyController", function($scope) {
+			myModule.controller("MyController", ['$scope', function($scope) {
 				$scope.mythings = [ {
 					name : "Thing 1"
 				}, {
@@ -16,8 +16,8 @@
 				$scope.remove = function(index) {
 					$scope.mythings.splice(index, 1);
 				};
-			});
-			myModule.controller("MyCounter", function($scope) {
+			}]);
+			myModule.controller("MyCounter", ['$scope', function($scope) {
 				$scope.counter = 1;
 
 				$scope.decrease = function() {
@@ -31,7 +31,7 @@
 						$scope.counter++;
 					}
 				};
-			});			
+			}]);			
 			return [ myModule.name ];
 		});
 })(Liferay, angular);
