@@ -9,3 +9,4 @@ To build run:
 ```.sh
 mvn package
 ```
+and then copy the resulted war file to ``<liferay-home>/deploy`` directory.
